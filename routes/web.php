@@ -34,7 +34,8 @@ Route::group(['middleware' => 'auth:user'], function (){
         Route::post('/kategori/prosesTambah', [\App\Http\Controllers\KategoriController::class, 'prosesTambah'])->name('kategori.prosesTambah');
         Route::get('/kategori/ubah/{id}', [\App\Http\Controllers\KategoriController::class, 'ubah'])->name('kategori.ubah');
         Route::post('/kategori/prosesUbah', [\App\Http\Controllers\KategoriController::class, 'prosesUbah'])->name('kategori.prosesUbah');
-        Route::get('/kategori/hapus{id}', [\App\Http\Controllers\KategoriController::class, 'hapus'])->name('kategori.hapus');
+        Route::get('/kategori/hapus/{id}', [\App\Http\Controllers\KategoriController::class, 'hapus'])->name('kategori.hapus');
+        Route::get('/kategori/export-pdf', [\App\Http\Controllers\KategoriController::class, 'exportPdf'])->name('kategori.exportPdf');
 
         Route::get('/berita', [\App\Http\Controllers\BeritaController::class, 'index'])->name('berita.index');
         Route::get('/berita/tambah', [\App\Http\Controllers\BeritaController::class, 'tambah'])->name('berita.tambah');
@@ -42,6 +43,13 @@ Route::group(['middleware' => 'auth:user'], function (){
         Route::get('/berita/ubah/{id}', [\App\Http\Controllers\BeritaController::class, 'ubah'])->name('berita.ubah');
         Route::post('/berita/prosesUbah', [\App\Http\Controllers\BeritaController::class, 'prosesUbah'])->name('berita.prosesUbah');
         Route::get('/berita/hapus{id}', [\App\Http\Controllers\BeritaController::class, 'hapus'])->name('berita.hapus');
+
+        Route::get('/user', [\App\Http\Controllers\UserController::class, 'index'])->name('user.index');
+        Route::get('/user/tambah', [\App\Http\Controllers\UserController::class, 'tambah'])->name('user.tambah');
+        Route::post('/user/prosesTambah', [\App\Http\Controllers\UserController::class, 'prosesTambah'])->name('user.prosesTambah');
+        Route::get('/user/ubah/{id}', [\App\Http\Controllers\UserController::class, 'ubah'])->name('user.ubah');
+        Route::post('/user/prosesUbah', [\App\Http\Controllers\UserController::class, 'prosesUbah'])->name('user.prosesUbah');
+        Route::get('/user/hapus/{id}', [\App\Http\Controllers\UserController::class, 'hapus'])->name('user.hapus');
 
     });
 
